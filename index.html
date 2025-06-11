@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First JavaScript Example</title>
+</head>
+<body>
+
+  <h1 id="myHeading">Welcome to My Page</h1>
+  <p id="myPara">This is a simple paragraph.</p>
+
+  <button onclick="changeText()">Click Me</button>
+
+  <script>
+    function changeText() {
+      document.getElementById("myHeading").innerText = "Heading Changed!";
+      document.querySelector("#myPara").innerText = "Paragraph Changed!";
+    }
+  </script>
+
+</body>
+</html>

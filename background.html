@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome Page</title>
+</head>
+<body>
+
+  <h2>Enter Your Name:</h2>
+  <input type="text" id="nameInput" placeholder="Type your name here" />
+  <button id="submitBtn">Submit</button>
+
+  <p id="welcomeMessage"></p>
+  <button id="bgBtn">Change Background</button>
+
+  <script>
+    const submitButton = document.getElementById("submitBtn");
+    const nameInput = document.getElementById("nameInput");
+    const message = document.getElementById("welcomeMessage");
+    const bgButton = document.getElementById("bgBtn");
+
+    submitButton.addEventListener("click", function() {
+      const name = nameInput.value;
+      message.innerText = "Welcome, " + name + "!";
+    });
+    function getRandomColor() {
+      const letters = "0123456789ABCDEF";
+      let color = "#";
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+    bgButton.addEventListener("click", function() {
+      document.body.style.backgroundColor = getRandomColor();
+    });
+  </script>
+
+</body>
+</html>
